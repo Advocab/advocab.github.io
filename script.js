@@ -193,7 +193,7 @@ function switchSentences(pos, boxId, row) {
 }
 
 window.onload = function () {
-    const container = document.getElementById('container');
+    const container = document.querySelector('.container');
 
     for (let i = 0; i < boxes.length; i++) {
         const box = document.createElement('div');
