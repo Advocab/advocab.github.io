@@ -22,7 +22,7 @@ body {
     justify-content: safe center;
     align-content: safe center;
     gap: calc(10 * var(--unit));
-    padding: calc(10 * var(--unit));
+    padding: calc(30 * var(--unit));
     box-sizing: border-box;
     min-height: 100vh;
 }
