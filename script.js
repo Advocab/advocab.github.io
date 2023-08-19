@@ -193,15 +193,12 @@ function switchSentences(pos, boxId, row) {
 }
 
 window.onload = function () {
-    const showall = document.createElement('div');
-    showall.classList.add('showall');
-    showall.textContent = "Show All";
+    const showall = document.querySelector('.showall');
     showall.style.display = "none";
     showall.addEventListener('click', () => {
         document.querySelectorAll('.box').forEach(all => all.style.display = "initial");
         showall.style.display = "none";
     });
-    document.body.appendChild(showall);
 
     const container = document.querySelector('.container');
 
@@ -234,7 +231,7 @@ window.onload = function () {
         const counter = document.createElement('div');
         counter.classList.add('box-counter');
         counter.textContent = 0;
-        counter.addEventListener('click', () => {
+        counter.addEventListener('dblclick', () => {
             counter.textContent = 0;
         });
         box.appendChild(counter);
