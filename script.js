@@ -196,13 +196,13 @@ window.onload = function() {
     const showall = document.querySelector('.showall');
     showall.style.display = "none";
     showall.addEventListener('click', () => {
+        showall.style.display = "none";
         document.querySelectorAll('.box').forEach(all => {
             all.style.display = "initial";
             setTimeout(function() {
                 all.style.opacity = "initial";
             }, 125);
         });
-        showall.style.display = "none";
     });
 
     const container = document.querySelector('.container');
