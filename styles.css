@@ -36,6 +36,7 @@ body {
     justify-content: space-between;
     flex: 0 0 calc(300 * var(--unit));
     box-shadow: calc(5 * var(--unit)) calc(5 * var(--unit)) calc(10 * var(--unit)) gray;
+    transition: opacity var(--fade) ease-in-out;
 }
 
 .box-title {

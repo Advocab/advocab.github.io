@@ -192,11 +192,16 @@ function switchSentences(pos, boxId, row) {
     updateBox(pos, boxId, 1);
 }
 
-window.onload = function () {
+window.onload = function() {
     const showall = document.querySelector('.showall');
     showall.style.display = "none";
     showall.addEventListener('click', () => {
-        document.querySelectorAll('.box').forEach(all => all.style.display = "initial");
+        document.querySelectorAll('.box').forEach(all => {
+            all.style.display = "initial";
+            setTimeout(function() {
+                all.style.opacity = "initial";
+            }, 125);
+        });
         showall.style.display = "none";
     });
 
@@ -218,8 +223,11 @@ window.onload = function () {
             });
         });
         title.addEventListener('dblclick', () => {
-            box.style.display = "none";
-            showall.style.display = "initial";
+            box.style.opacity = 0;
+            setTimeout(function() {
+                box.style.display = "none";
+                showall.style.display = "initial";
+            }, 375);
         });
         box.appendChild(title);
 
