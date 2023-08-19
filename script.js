@@ -193,6 +193,16 @@ function switchSentences(pos, boxId, row) {
 }
 
 window.onload = function () {
+    const showall = document.createElement('div');
+    showall.classList.add('showall');
+    showall.textContent = "Show All";
+    showall.style.display = "none";
+    showall.addEventListener('click', () => {
+        document.querySelectorAll('.box').forEach(all => all.style.display = "initial");
+        showall.style.display = "none";
+    });
+    document.body.appendChild(showall);
+
     const container = document.querySelector('.container');
 
     for (let i = 0; i < boxes.length; i++) {
@@ -209,6 +219,10 @@ window.onload = function () {
                 shuffleList(list);
                 updateBox(pos, i, 0);
             });
+        });
+        title.addEventListener('dblclick', () => {
+            box.style.display = "none";
+            showall.style.display = "initial";
         });
         box.appendChild(title);
 

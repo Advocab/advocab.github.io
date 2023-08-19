@@ -71,6 +71,16 @@ body {
 .box-sentence:hover { background-color: var(--halfBlue); }
 .box-counter:hover { color: var(--halfRed); }
 
+.showall {
+    position: fixed;
+    top: calc(10 * var(--unit));
+    right: calc(10 * var(--unit));
+    font-size: calc(10 * var(--unit));
+    font-variant: small-caps;
+    color: gray;
+    cursor: pointer;
+}
+
 .signature {
     position: fixed;
     bottom: calc(10 * var(--unit));
@@ -78,6 +88,7 @@ body {
     font-size: calc(10 * var(--unit));
     font-variant: small-caps;
     color: gray;
+    cursor: pointer;
 }
 
 a {
