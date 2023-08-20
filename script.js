@@ -160,9 +160,9 @@ const sizes = [
 function fetchText(fileNames) {
     fileNames.forEach(fileName => {
         fileName.forEach(name => {
-            const response = fetch('sentences/' + name + '.txt');
-            const content = response.text();
-            console.log(content);
+            fetch('sentences/' + name + '.txt')
+                .then(response => response.text())
+                .then(data => console.log(data));
         });
     });
 }
