@@ -144,9 +144,28 @@ const lists = [			// Names of the lists displayed in each box
     [idiom],
 ];
 
+const listsB = [			// Names of the lists displayed in each box
+    ["think", "start"],
+    ["so"],
+    ["but"],
+    ["like"],
+    ["expAnimal", "expColor"],
+    ["idiom"],
+];
+
 const sizes = [
     [1, max, max, max, 3, max]	// Number of sentences on the first list in each box
 ];
+
+async function fetchText(fileNames) {
+    fileNames.forEach(fileName => {
+        fileName.forEach(name => {
+            const response = await fetch('sentences/' + name + '.txt');
+            const content = await response.text();
+            console.log(content);
+        });
+    });
+}
 
 // ------------------------------
 // DO NOT CHANGE BELOW THIS LINE!
@@ -251,4 +270,6 @@ window.onload = function() {
         box.forEach(shuffleList);
         box.forEach((_, pos) => updateBox(pos, index, 0));
     });
+
+fetchText(listsB);
 };
