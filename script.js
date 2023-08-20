@@ -206,6 +206,7 @@ function switchSentences(pos, boxId, row) {
 }
 
 window.onload = function() {
+fetchText(lists);
     const fade = 250;
 
     const showall = document.querySelector('.showall');
@@ -264,6 +265,4 @@ window.onload = function() {
         box.forEach(shuffleList);
         box.forEach((_, pos) => updateBox(pos, index, 0));
     });
-
-fetchText(lists);
 };
