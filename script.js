@@ -133,7 +133,7 @@ window.onload = function() {
         box.appendChild(counter);
     }
 
-    });
-
     startup(lists);
+
+    });
 };
