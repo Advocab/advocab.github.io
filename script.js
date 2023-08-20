@@ -92,7 +92,8 @@ window.onload = function() {
     .then(response => response.text())
     .then(text => {
 
-    let boxes = text.split('\n').map(i => i.trim());
+    const boxes = text.split('\n').map(i => i.trim());
+    console.log(boxes);
     
     for (let i = 0; i < boxes.length; i++) {
         const box = document.createElement('div');
