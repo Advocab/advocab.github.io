@@ -91,7 +91,7 @@ window.onload = function() {
             all.style.display = "initial";
             setTimeout(function() {
                 all.style.opacity = "initial";
-            }, fade * 0.5);
+            }, fade * 0);
         });
     });
 
