@@ -68,7 +68,7 @@ function startup(list) {
             fetch('sentences/' + name + '.txt')
             .then(response => response.text())
             .then(text => {
-                box[nameIndex] = text.split('\n').map(i => i.trim()));
+                box[nameIndex] = text.split('\n').map(i => i.trim());
                 shuffleList(box[nameIndex]);
                 updateBox(nameIndex, boxIndex, 0);
             });
