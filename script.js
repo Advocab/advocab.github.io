@@ -1,138 +1,4 @@
-// ------------------------------
-// DO NOT CHANGE ABOVE THIS LINE!
-// ------------------------------
-
-const think = [
-    "I guess...",
-    "I imagine...",
-    "I suppose...",
-    "It looks to me as if...",
-    "It looks to me as though...",
-    "I reckon...",
-    "I figure...",
-    "I gather...",
-];
-
-const start = [
-    "As a matter of fact...",
-    "To be frank...",
-    "Frankly...",
-    "In actuality...",
-    "Quite honestly...",
-    "By and large...",
-    "On the whole...",
-    "I'd like to point out that...",
-    "Can't you realize that... ?",
-    "Wouldn't it be better if... ?",
-    "I beg to differ, since...",
-    "We're definitely on the same page, as...",
-    "Let's face it...",
-    "It's a well known fact that...",
-    "It goes without saying that...",
-    "You'll be interested in knowing that...",
-];
-
-const but = [
-    "However",
-    "Yet",
-    "Although",
-    "Though",
-    "While",
-    "Whereas",
-    "Nevertheless",
-    "Notwithstanding",
-    "Despite",
-    "In spite of",
-    "On the other hand",
-    "Nonetheless",
-    "Still",
-    "Instead",
-    "Conversely",
-    "In contrast",
-    "Even so",
-    "Be that as it may",
-    "Otherwise",
-    "Except",
-];
-
-const like = [
-    "To enjoy",
-    "To love",
-    "To adore",
-    "To appreciate",
-    "To delight in",
-    "To fancy",
-    "To be fond of",
-    "To have a soft spot for",
-    "To take pleasure in",
-    "To find appealing",
-    "To cherish",
-    "To take delight in",
-    "To have a taste for",
-    "To have a liking for",
-    "To get a kick out of",
-    "To have an affinity for",
-    "To have a preference for",
-    "To have a weakness for",
-    "To have a passion for",
-    "To have a thing for",
-];
-
-const so = [
-    "Therefore",
-    "Thus",
-    "Consequently",
-    "Hence",
-    "As a result",
-    "Accordingly",
-    "Because of that",
-    "That being the case",
-    "For this reason",
-    "Ergo",
-    "In consequence",
-    "That is why",
-    "So that",
-    "With the result that",
-    "Due to this",
-    "Resultantly",
-    "Then",
-    "In turn",
-    "Following that",
-    "In conclusion",
-];
-
-const idiom = [
-    "Idiom A",
-    "Idiom B",
-    "Idiom C",
-    "Idiom D",
-    "Idiom E",
-    "Idiom F",
-    "Idiom G",
-];
-
-const expColor = [
-    "Color Expression A",
-    "Color Expression B",
-    "Color Expression C",
-    "Color Expression D",
-    "Color Expression E",
-    "Color Expression F",
-    "Color Expression G",
-];
-
-const expAnimal = [
-    "Animal Expression A",
-    "Animal Expression B",
-    "Animal Expression C",
-    "Animal Expression D",
-    "Animal Expression E",
-    "Animal Expression F",
-    "Animal Expression G",
-];
-
-const boxes = ["Starters", "Consequence", "Contrast", "Preference", "Expressions", "Idioms"];
-
+const boxes;
 const max = 6;			// Maximum number of sentences in each box
 
 const lists = [			// Names of the lists displayed in each box
@@ -193,12 +59,16 @@ function updateBox(pos, boxId, score) {
 }
 
 function startup(list) {
+    fetch('sentences/!boxes.txt')
+    .then(response => response.text())
+    .then(text => boxes = text.split('\n').map(trim());
+
     list.forEach((box, boxIndex) => {
         box.forEach((name, nameIndex) => {
             fetch('sentences/' + name + '.txt')
             .then(response => response.text())
             .then(text => {
-                box[nameIndex] = text.split('\n');
+                box[nameIndex] = text.split('\n').map(trim());
                 shuffleList(box[nameIndex]);
                 updateBox(nameIndex, boxIndex, 0);
             });
