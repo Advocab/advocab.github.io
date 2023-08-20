@@ -1,4 +1,4 @@
-const boxes;
+const boxes = [];
 const max = 6;			// Maximum number of sentences in each box
 
 const lists = [			// Names of the lists displayed in each box
