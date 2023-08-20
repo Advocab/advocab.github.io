@@ -151,7 +151,7 @@ const sizes = [
 // NEW STUFF
 
 async function fetchText() {
-    let response = await fetch('sentences/');
+    let response = await fetch('/sentences/');
     let data = await response.text();
     console.log(data);
 }
