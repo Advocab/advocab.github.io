@@ -1,4 +1,4 @@
-const boxes;
+const boxes = [];
 const max = 6;			// Maximum number of sentences in each box
 
 const lists = [			// Names of the lists displayed in each box
@@ -91,9 +91,10 @@ window.onload = function() {
 
     fetch('sentences/!boxes.txt')
     .then(response => response.text())
-    .then(text => boxes = text.split('\n').map(i => i.trim()))
-    .then(_ => {
+    .then(text => {
 
+    boxes = text.split('\n').map(i => i.trim());
+    
     for (let i = 0; i < boxes.length; i++) {
         const box = document.createElement('div');
         box.classList.add('box');
