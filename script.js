@@ -148,12 +148,15 @@ const sizes = [
     [1, max, max, max, 3, max]	// Number of sentences on the first list in each box
 ];
 
-function fetchText(fileNames) {
-    fileNames.forEach(fileName => {
-        fileName.forEach((name, index) => {
+function fetchText(list) {
+    list.forEach(box => {
+        box.forEach((name, index) => {
             fetch('sentences/' + name + '.txt')
-                .then(response => response.text())
-                .then(data => fileName[index] = data);
+            .then(response => response.text())
+            .then(text => {
+                const sentences = text.split('\n');
+                box[index] = sentences;
+            });
         });
     });
 }
