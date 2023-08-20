@@ -148,19 +148,6 @@ const sizes = [
     [1, max, max, max, 3, max]	// Number of sentences on the first list in each box
 ];
 
-function fetchText(list) {
-    list.forEach(box => {
-        box.forEach((name, index) => {
-            fetch('sentences/' + name + '.txt')
-            .then(response => response.text())
-            .then(text => {
-                const sentences = text.split('\n');
-                box[index] = sentences;
-            });
-        });
-    });
-}
-
 // ------------------------------
 // DO NOT CHANGE BELOW THIS LINE!
 // ------------------------------
@@ -172,6 +159,16 @@ function shuffleList(list) {
         const j = Math.floor(Math.random() * (i + 1));
         [list[i], list[j]] = [list[j], list[i]];
     }
+}
+
+function switchSentences(pos, boxId, row) {
+    const list = lists[boxId][pos];
+    const size = sizes[pos][boxId];
+
+    [list[row], list[size]] = [list[size], list[row]];
+
+    list.push(list.splice(size, 1)[0]);
+    updateBox(pos, boxId, 1);
 }
 
 function updateBox(pos, boxId, score) {
@@ -195,18 +192,19 @@ function updateBox(pos, boxId, score) {
     counter.textContent = parseInt(counter.textContent) + score;
 }
 
-function switchSentences(pos, boxId, row) {
-    const list = lists[boxId][pos];
-    const size = sizes[pos][boxId];
-
-    [list[row], list[size]] = [list[size], list[row]];
-
-    list.push(list.splice(size, 1)[0]);
-    updateBox(pos, boxId, 1);
+function startup(list) {
+    list.forEach((box, boxIndex) => {
+        box.forEach((name, nameIndex) => {
+            fetch('sentences/' + name + '.txt')
+            .then(response => response.text())
+            .then(text => box[nameIndex] = text.split('\n'));
+            shuffleList(box[nameIndex]);
+            updateBox(nameIndex, boxIndex, 0);
+        });
+    });
 }
 
 window.onload = function() {
-fetchText(lists);
     const fade = 250;
 
     const showall = document.querySelector('.showall');
@@ -261,8 +259,5 @@ fetchText(lists);
         box.appendChild(counter);
     }
 
-    lists.forEach((box, index) => {
-        box.forEach(shuffleList);
-        box.forEach((_, pos) => updateBox(pos, index, 0));
-    });
+    startup(lists);
 };
