@@ -150,7 +150,7 @@ const sizes = [
 
 function fetchText(fileNames) {
     fileNames.forEach(fileName => {
-        fileName.forEach(name => {
+        fileName.forEach((name, index) => {
             fetch('sentences/' + name + '.txt')
                 .then(response => response.text())
                 .then(data => fileName[index] = data);
