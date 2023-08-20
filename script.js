@@ -1,3 +1,12 @@
+const boxes = [
+    "Starters",
+    "Consequence",
+    "Contrast",
+    "Preference",
+    "Expressions",
+    "Idioms",
+];
+
 const max = 6;			// Maximum number of sentences in each box
 
 const lists = [			// Names of the lists displayed in each box
@@ -88,13 +97,6 @@ window.onload = function() {
 
     const container = document.querySelector('.container');
 
-    fetch('sentences/!boxes.txt')
-    .then(response => response.text())
-    .then(text => {
-
-    const boxes = text.split('\n').map(i => i.trim());
-    console.log(boxes);
-    
     for (let i = 0; i < boxes.length; i++) {
         const box = document.createElement('div');
         box.classList.add('box');
@@ -134,6 +136,4 @@ window.onload = function() {
     }
 
     startup(lists);
-
-    });
 };
