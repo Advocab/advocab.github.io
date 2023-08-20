@@ -192,10 +192,10 @@ function updateBox(pos, boxId, score) {
     counter.textContent = parseInt(counter.textContent) + score;
 }
 
-function startup(list) {
+async function startup(list) {
     list.forEach((box, boxIndex) => {
         box.forEach((name, nameIndex) => {
-            fetch('sentences/' + name + '.txt')
+            await fetch('sentences/' + name + '.txt')
             .then(response => response.text())
             .then(text => box[nameIndex] = text.split('\n'));
             shuffleList(box[nameIndex]);
