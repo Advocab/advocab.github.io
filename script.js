@@ -5,6 +5,7 @@ const boxes = [
     "Preference",
     "Expressions",
     "Idioms",
+    "Urianger",
 ];
 
 const max = 6;			// Maximum number of sentences in each box
