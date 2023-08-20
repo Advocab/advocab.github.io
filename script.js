@@ -1,4 +1,3 @@
-const boxes = [];
 const max = 6;			// Maximum number of sentences in each box
 
 const lists = [			// Names of the lists displayed in each box
@@ -59,10 +58,6 @@ function updateBox(pos, boxId, score) {
 }
 
 function startup(list) {
-    fetch('sentences/!boxes.txt')
-    .then(response => response.text())
-    .then(text => boxes = text.split('\n').map(i => i.trim()));
-
     list.forEach((box, boxIndex) => {
         box.forEach((name, nameIndex) => {
             fetch('sentences/' + name + '.txt')
@@ -92,6 +87,11 @@ window.onload = function() {
     });
 
     const container = document.querySelector('.container');
+
+    fetch('sentences/!boxes.txt')
+    .then(response => response.text())
+    .then(text => const boxes = text.split('\n').map(i => i.trim()))
+    .then(_ => {
 
     for (let i = 0; i < boxes.length; i++) {
         const box = document.createElement('div');
@@ -130,6 +130,8 @@ window.onload = function() {
         });
         box.appendChild(counter);
     }
+
+    });
 
     startup(lists);
 };
