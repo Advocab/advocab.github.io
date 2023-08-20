@@ -61,14 +61,14 @@ function updateBox(pos, boxId, score) {
 function startup(list) {
     fetch('sentences/!boxes.txt')
     .then(response => response.text())
-    .then(text => boxes = text.split('\n').map(i => i.trim());
+    .then(text => boxes = text.split('\n').map(i => i.trim()));
 
     list.forEach((box, boxIndex) => {
         box.forEach((name, nameIndex) => {
             fetch('sentences/' + name + '.txt')
             .then(response => response.text())
             .then(text => {
-                box[nameIndex] = text.split('\n').map(i => i.trim());
+                box[nameIndex] = text.split('\n').map(i => i.trim()));
                 shuffleList(box[nameIndex]);
                 updateBox(nameIndex, boxIndex, 0);
             });
