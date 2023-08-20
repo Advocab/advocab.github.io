@@ -193,6 +193,8 @@ function switchSentences(pos, boxId, row) {
 }
 
 window.onload = function() {
+    const fade = 250;
+
     const showall = document.querySelector('.showall');
     showall.style.display = "none";
     showall.addEventListener('click', () => {
@@ -201,7 +203,7 @@ window.onload = function() {
             all.style.display = "initial";
             setTimeout(function() {
                 all.style.opacity = "initial";
-            }, 125);
+            }, fade * 0.5);
         });
     });
 
@@ -227,7 +229,7 @@ window.onload = function() {
             setTimeout(function() {
                 box.style.display = "none";
                 showall.style.display = "initial";
-            }, 375);
+            }, fade * 1.5);
         });
         box.appendChild(title);
 
