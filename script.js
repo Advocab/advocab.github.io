@@ -157,11 +157,11 @@ const sizes = [
     [1, max, max, max, 3, max]	// Number of sentences on the first list in each box
 ];
 
-async function fetchText(fileNames) {
+function fetchText(fileNames) {
     fileNames.forEach(fileName => {
         fileName.forEach(name => {
-            const response = await fetch('sentences/' + name + '.txt');
-            const content = await response.text();
+            const response = fetch('sentences/' + name + '.txt');
+            const content = response.text();
             console.log(content);
         });
     });
