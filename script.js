@@ -5,7 +5,6 @@ const boxes = [
     "Preference",
     "Expressions",
     "Idioms",
-    "Urianger",
 ];
 
 const max = 6;			// Maximum number of sentences in each box
@@ -17,11 +16,10 @@ const lists = [			// Names of the lists displayed in each box
     ["like"],
     ["expAnimal", "expColor"],
     ["idiom"],
-    ["urianger"],
 ];
 
 const sizes = [
-    [1, max, max, max, 3, max, max]	// Number of sentences on the first list in each box
+    [1, max, max, max, 3, max]	// Number of sentences on the first list in each box
 ];
 
 // ------------------------------
