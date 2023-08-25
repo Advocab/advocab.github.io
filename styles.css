@@ -69,9 +69,23 @@ body {
     transition: color var(--fade) ease-in-out;
 }
 
+.helpBlue, .helpRed {
+    position: fixed;
+    top: calc(10 * var(--unit));
+    right: 50%;
+    transform: translate(50%);
+    font-size: calc(10 * var(--unit));
+    font-variant: small-caps;
+    color: var(--bgGray);
+    transition: color var(--fade) ease-in-out;
+}
+
 .box-title:hover { color: var(--halfBlue); }
 .box-sentence:hover { background-color: var(--halfBlue); }
 .box-counter:hover { color: var(--halfRed); }
+
+.box-title:hover + .helpBlue { color: var(--flagBlue); }
+.box-counter:hover + .helpRed { color: var(--flagRed); }
 
 .showall {
     position: fixed;
