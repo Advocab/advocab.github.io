@@ -81,9 +81,15 @@ body {
     transition: color var(--fade) ease-in-out;
 }
 
-.box-title:hover { color: var(--halfBlue); --tutoGray: var(--flagBlue); }
+.box-title:hover {
+    color: var(--halfBlue);
+    --tutoGray: #3C3B6E;
+}
 .box-sentence:hover { background-color: var(--halfBlue); }
-.box-counter:hover { color: var(--halfRed); --tutoGray: var(--flagRed); }
+.box-counter:hover {
+    color: var(--halfRed);
+    --tutoGray: #B22234;
+}
 
 .showall {
     position: fixed;
