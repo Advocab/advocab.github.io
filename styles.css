@@ -5,6 +5,7 @@
     --flagRed: #B22234;
     --halfBlue: #CECEDB;
     --halfRed: #ECC8CC;
+    --tutoGray: #E8E8E8;
     --unit: 1px;
 }
 
@@ -76,13 +77,13 @@ body {
     transform: translate(50%);
     font-size: calc(10 * var(--unit));
     font-variant: small-caps;
-    color: var(--bgGray);
+    color: var(--tutoGray);
     transition: color var(--fade) ease-in-out;
 }
 
-.box-title:hover { color: var(--halfBlue); } + .helpBlue { color: var(--flagBlue); }
+.box-title:hover { color: var(--halfBlue); --tutoGray: var(--flagBlue); }
 .box-sentence:hover { background-color: var(--halfBlue); }
-.box-counter:hover { color: var(--halfRed); } + .helpRed { color: var(--flagRed); }
+.box-counter:hover { color: var(--halfRed); --tutoGray: var(--flagRed); }
 
 .showall {
     position: fixed;
