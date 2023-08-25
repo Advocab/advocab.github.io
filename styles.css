@@ -80,12 +80,9 @@ body {
     transition: color var(--fade) ease-in-out;
 }
 
-.box-title:hover { color: var(--halfBlue); }
+.box-title:hover { color: var(--halfBlue); } + .helpBlue { color: var(--flagBlue); }
 .box-sentence:hover { background-color: var(--halfBlue); }
-.box-counter:hover { color: var(--halfRed); }
-
-.box-title:hover + .helpBlue { color: var(--flagBlue); }
-.box-counter:hover + .helpRed { color: var(--flagRed); }
+.box-counter:hover { color: var(--halfRed); } + .helpRed { color: var(--flagRed); }
 
 .showall {
     position: fixed;
