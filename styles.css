@@ -73,15 +73,28 @@ body {
 .box-sentence:hover { background-color: var(--halfBlue); }
 .box-counter:hover { color: var(--halfRed); }
 
-.helpBlue, .helpRed {
+.helpBlue {
     position: fixed;
     top: calc(10 * var(--unit));
     right: 50%;
     transform: translate(50%);
     font-size: calc(10 * var(--unit));
     font-variant: small-caps;
-    color: var(--bgGray);
-    transition: color var(--fade) ease-in-out;
+    color: var(--flagBlue);
+    visibility: hidden;
+    transition: visibility var(--fade) ease-in-out;
+}
+
+.helpRed {
+    position: fixed;
+    top: calc(10 * var(--unit));
+    right: 50%;
+    transform: translate(50%);
+    font-size: calc(10 * var(--unit));
+    font-variant: small-caps;
+    color: var(--flagRed);
+    visibility: hidden;
+    transition: visibility var(--fade) ease-in-out;
 }
 
 .showall {

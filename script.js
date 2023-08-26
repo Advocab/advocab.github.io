@@ -30,8 +30,8 @@ sizes[1] = sizes[0].map(i => max - i);
 
 function help(color, hover) {
     target = document.querySelector('.help' + color);
-    if (hover) target.style.color = "var(--flag" + color + ")";
-    else target.style.color = "var(--bgGray)";
+    if (hover) target.style.visibility = "visible";
+    else target.style.visibility = "hidden";
 }
 
 function shuffleList(list) {
