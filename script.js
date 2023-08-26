@@ -31,7 +31,7 @@ sizes[1] = sizes[0].map(i => max - i);
 function help(color, hover) {
     target = document.querySelector('.help' + color);
     if (hover) target.style.color = "var(--flag" + color + ")";
-    else target.style.color = "initial";
+    else target.style.color = "var(--bgGray)";
 }
 
 function shuffleList(list) {
@@ -111,8 +111,8 @@ window.onload = function() {
 
         const title = document.createElement('div');
         title.classList.add('box-title');
-        title.setAttribute('onmouseover', 'help("Blue", true)');
-        title.setAttribute('onmouseout', 'help("Blue", false)');
+        title.setAttribute('onmouseover', "help('Blue', true)");
+        title.setAttribute('onmouseout', "help('Blue', false)");
         title.textContent = boxes[i];
         title.addEventListener('click', () => {
             lists[i].forEach((list, pos) => {
@@ -136,8 +136,8 @@ window.onload = function() {
 
         const counter = document.createElement('div');
         counter.classList.add('box-counter');
-        title.setAttribute('onmouseover', 'help("Red", true)');
-        title.setAttribute('onmouseout', 'help("Red", false)');
+        counter.setAttribute('onmouseover', "help('Red', true)");
+        counter.setAttribute('onmouseout', "help('Red', false)");
         counter.textContent = 0;
         counter.addEventListener('dblclick', () => {
             counter.textContent = 0;
